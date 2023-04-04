@@ -1,5 +1,5 @@
 ### DEMO Link
-[myDatatable Demo](http://ardauyaroglu.net/react/tictactoe)
+[Tictactoe Demo](http://ardauyaroglu.net/react/tictactoe)
 
 # Getting Started with Create React App
 
