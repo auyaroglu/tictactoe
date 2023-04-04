@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap");
+
+body {
+    background-color: #1d273a;
+    color: #ddd;
+    margin: 0;
+    padding: 0 0 30px;
+    font-family: 'Exo 2', sans-serif;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 360px;
+    h1 {
+        font-size: 36px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    h3 {
+        margin: 20px 0 40px;
+        color: #f7c765;
+        font-size: 44px;
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+    }
+    .restart {
+        border: 0;
+        padding: 0 15px;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 500;
+        cursor: pointer;
+        background-color: #f7c765;
+        color: #1d273a;
+        margin: 5px 0;
+        transition: background-color .5s ease;
+        -webkit-transition: background-color .5s ease;
+        -moz-transition: background-color .5s ease;
+        -o-transition: background-color .5s ease;
+        &:hover {
+            transition: background-color .5s ease;
+            -webkit-transition: background-color .5s ease;
+            -moz-transition: background-color .5s ease;
+            -o-transition: background-color .5s ease;
+            background-color: #E07767;            
+        }
+    }
+    .gameboard {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px;
+        position: relative;
+        &.solved {
+            .block {
+                pointer-events: none;
+                &.active {
+                    background: #e2ac80;
+                    &:after {
+                        color: #fff;
+                        border-color: #fff;
+                    }
+                }
+            }
+        }
+        .block {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1 0 calc(33.333% - 2px);
+            height: auto;
+            background: #ddd;
+            aspect-ratio: 1/1;
+            cursor: pointer;
+            &:hover {
+                background-color: #c5c5c5;
+            }
+            &[data-player="X"] {
+                &:after {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    content: "\2716";
+                    font-size: 75px;
+                    color: #a65142;
+                    text-align: center;
+                    padding-bottom: 6px;
+                }
+            }
+            &[data-player="O"] {
+                &:after {
+                    display: flex;
+                    border: 10px solid #0b3073;
+                    border-radius: 100%;
+                    width: 42px;
+                    height: 42px;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    content: "";
+                }
+            }
+        }
+    }
+    .scoreboard {
+        width: 100%;
+        padding: 10px 15px;
+        background: #E07767;   
+        display: flex;
+        align-items: center;
+        flex-direction: column; 
+        strong {
+            display: flex;
+            width: 100%;
+            padding-bottom: 10px;
+            justify-content: center;
+            color: #000;
+            font-size: 21px;
+            border-bottom: 1px dotted #000;
+        }
+        div {
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px dotted #000;
+            width: 100%;
+            justify-content: center;
+            font-size: 18px;
+            color: #000;
+            font-weight: 600;
+            span {
+                display: flex;
+                color: #0b3073;
+                letter-spacing: 5px;
+                font-size: 14px;
+                align-items: center;
+                font-weight: 600;
+                margin: 0 15px;
+                min-width: 50px;
+                justify-content: center;
+            }
+        }
+    }
+}
